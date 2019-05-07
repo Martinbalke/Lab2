@@ -7,6 +7,4 @@ section ul li{
 ol li{
     color: white;
 }
-ol:nth-child(1){
-    background-color: orange;
-}
+ol li a{}
