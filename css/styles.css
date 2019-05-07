@@ -1,0 +1,12 @@
+*{
+    background-color: red;
+}
+section ul li{
+    background-color: blue;
+}
+ol li{
+    color: white;
+}
+ol:nth-child(1){
+    background-color: orange;
+}
