@@ -3,7 +3,8 @@
 var userScore = 0;
 
 
-// function takes the user input from a prompt and returns a correct or incorrect alert then updates the users score to reflect their guess
+
+// function takes an input from a prompt then normalizes it. Based on the users answer their userScore will be updated. Then once the user is done their score will be displayed on page.
 function guessingGame(guess){
   if (guess.toLocaleLowerCase() === 'y' || guess.toLocaleLowerCase() === 'yes' ){
     userScore++;
@@ -19,6 +20,7 @@ function guessingGame(guess){
   }
   
 }
+// Timeout the prompt so html runs first, then ask a series of prompts and run them through the guessing game function.
 setTimeout(function(){
   var myNameGuess = prompt('Lets play a guessing game so that we can learn about me the author! The first question is, is my name Martin?');
   guessingGame(myNameGuess);
