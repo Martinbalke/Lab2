@@ -20,6 +20,23 @@ header h1{
     font-weight: bold;
     font-size: 3em;
 }
+#scoreBoard{
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px #072323;
+    width: 40%;
+    height: 20%;
+    background-color: #E87E53;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    text-align: center;
+    line-height: 80px;
+
+}
+#scoreBoardCounter{
+    font-size: 30px;
+
+}
 #triangle{
     position: absolute;
     top: 0px;
