@@ -47,13 +47,12 @@ header h1{
 
 }
 
-.textBox{
-    background-color: #233237;
-    padding: 5px;
-}
+
 #aboutMe{
     position: absolute;
     top: 40%;
+    background-color: #233237;
+    padding: 5px;
 }
 #aboutMe h2{
   display: grid;
@@ -69,9 +68,10 @@ header h1{
     width: 200px;
     height: 200px;
     position: relative;
-    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
     float: left;
     z-index: 1;
+    filter: grayscale(100%);
 }
 #triangle{
     position: absolute;
@@ -84,8 +84,35 @@ header h1{
   background-color:#18121E;
   z-index: -2;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 40%);
+  background-position: right;
+  background-size: 80%;
 
     
+}
+#skills{
+    position: absolute;
+    top: 85%;
+    display: flex;
+    border-top: 4px solid white;
+    width: 100%;
+    padding: 5px;
+    justify-content: space-around;
+    
+}
+#livedIn h2{
+    font-size: 1.5em;
+    padding-bottom: 5px;
+
+}
+#livedIn li{
+    padding: 2px;
+}
+#wantToLive h2{
+    font-size: 1.5em;
+    padding-bottom: 5px;
+}
+#wantToLive li{
+    padding: 2px;
 }
 @media only screen and (max-width: 900px){
     #triangle2{
