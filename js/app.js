@@ -8,13 +8,13 @@ var userScore = 0;
 function guessingGame(guess){
   if (guess.toLocaleLowerCase() === 'y' || guess.toLocaleLowerCase() === 'yes' ){
     userScore++;
-    alert('That\'s right! now you\'re ' + userScore + ' out of 5!');
-    console.log('User guessed ' + guess + ' they were right and currently have a score of ' + userScore + ' out of 5');
-    document.getElementById('scoreBoardCounter').innerHTML = userScore + ' out of 5';
+    alert('That\'s right! now you\'re ' + userScore + ' out of 7!');
+    console.log('User guessed ' + guess + ' they were right and currently have a score of ' + userScore + ' out of 7');
+    document.getElementById('scoreBoardCounter').innerHTML = userScore + ' out of 7';
   }
   else if (guess.toLocaleLowerCase() === 'n' || guess.toLocaleLowerCase() === 'no' ){
-    alert('Sorry you guessed wrong! Right now you\'re ' + userScore + ' out of 5');
-    console.log('User guessed ' + guess + ' they were wrong and currently have a score of ' + userScore + ' out of 5');
+    alert('Sorry you guessed wrong! Right now you\'re ' + userScore + ' out of 7');
+    console.log('User guessed ' + guess + ' they were wrong and currently have a score of ' + userScore + ' out of 7');
   } else{
     alert('Sorry, please guess yes or no! You missed your point for this round.');
   }
@@ -49,6 +49,7 @@ for(var j = 0; j < 4; j++){
   }else if(favoriteNumber === myFavoriteNumber){
     alert('You got it right!');
     console.log('user got my number right');
+    userScore++;
     break;
   } else{
     favoriteNumber = Number(prompt('Guess a number please'));
@@ -61,18 +62,21 @@ for(var j = 0; j < 4; j++){
 
 //for loop gives the user six chances to guess a country in which i've lived in
 var countries = ['canada','germany'];
+var correctGuess = false;
+
+var myCountryGuess = prompt('Can you guess one of the countries I\'ve lived in besides the United states? You get six tries!');
 
 for(var i = 0; i < 7; i++){
-  var myCountryGuess = prompt('Can you guess one of the countries I\'ve lived in besides the United states? You get six tries!');
-  if(myCountryGuess.toLocaleLowerCase() === countries[0] || myCountryGuess.toLocaleLowerCase() === countries[1]){
+  for(var n = 0; n < countries.length; n++){
+    if(myCountryGuess.toLocaleLowerCase() === countries[n]){
+      correctGuess = true;
+    }
+  }
+  if(correctGuess === false){
+    myCountryGuess = prompt('No, that\'s not one of the countries I have lived in. Guess again.');
+  } else if(correctGuess === true) {
+    userScore++;
     alert('You got it right!');
     break;
-  } else if(i === 6){
-    alert('Sorry you used up all of your guesses');
-  }else {
-    alert('Nice try but I haven\'t lived there! Guess again');
-  }
+  } 
 }
-
-
-
