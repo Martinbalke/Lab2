@@ -37,10 +37,34 @@ guessingGame(myMusicGuess);
 var myCodingGuess = prompt('You\'re almost at the end! Last question this time. Do you think I love coding!?');
 guessingGame(myCodingGuess);
 
+var favoriteNumber = Number(prompt('Try and guess my favorite number'));
+var myFavoriteNumber = 3;
+
+for(var j = 0; j < 4; j++){
+
+  if (favoriteNumber < myFavoriteNumber){
+    favoriteNumber = Number(prompt('Guess a higher number'));
+  }else if(favoriteNumber > myFavoriteNumber){
+    favoriteNumber = Number(prompt('Guess a lower number'));
+  }else if(favoriteNumber === myFavoriteNumber){
+    alert('You got it right!');
+    console.log('user got my number right');
+    break;
+  } else{
+    favoriteNumber = Number(prompt('Guess a number please'));
+  }
+  if(j === 3 && favoriteNumber !== myFavoriteNumber){
+    alert('Sorry you used up all of your guesses. My favorite number is 3.');
+  }
+}
+
+
 //for loop gives the user six chances to guess a country in which i've lived in
+var countries = ['canada','germany'];
+
 for(var i = 0; i < 7; i++){
   var myCountryGuess = prompt('Can you guess one of the countries I\'ve lived in besides the United states? You get six tries!');
-  if(myCountryGuess.toLocaleLowerCase() === 'germany' || myCountryGuess.toLocaleLowerCase() === 'canada'){
+  if(myCountryGuess.toLocaleLowerCase() === countries[0] || myCountryGuess.toLocaleLowerCase() === countries[1]){
     alert('You got it right!');
     break;
   } else if(i === 6){
